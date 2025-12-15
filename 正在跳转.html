@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>正在跳转...</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            padding: 2em;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1em;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="spinner"></div>
+        <h2>正在随机跳转，请稍候...</h2>
+    </div>
+
+    <script>
+        // --- 配置 ---
+        // 远程URL片段列表的地址
+        const URL_SOURCE = 'https://hub.293888.xyz/https://raw.githubusercontent.com/nankaine/webfiletest/refs/heads/main/bvides';
+        // 本地链接的基础URL (注意结尾要加一个斜杠)
+        const BASE_URL = 'https://www.bilibili.com/video/';
+
+        // 页面加载完成后执行
+        window.onload = function() {
+            // 使用 fetch API 获取远程数据
+            fetch(URL_SOURCE)
+                .then(response => {
+                    // 检查响应是否成功 (HTTP 状态码 200-299)
+                    if (!response.ok) {
+                        throw new Error(`网络请求失败，状态码: ${response.status}`);
+                    }
+                    // 获取响应的文本内容
+                    return response.text();
+                })
+                .then(data => {
+                    // 按行分割文本，并过滤掉空行
+                    const fragments = data.split('\n').map(line => line.trim()).filter(line => line);
+
+                    // 检查列表是否为空
+                    if (fragments.length === 0) {
+                        throw new Error('获取的URL列表为空。');
+                    }
+
+                    // 随机选择一个片段
+                    const randomFragment = fragments[Math.floor(Math.random() * fragments.length)];
+
+                    // 拼接成最终的完整URL
+                    const finalUrl = `${BASE_URL}${randomFragment}`;
+
+                    console.log(`成功获取片段，即将跳转到: ${finalUrl}`);
+
+                    // 执行页面跳转
+                    window.location.href = finalUrl;
+                })
+                .catch(error => {
+                    // 处理任何可能出现的错误
+                    console.error('跳转失败:', error);
+                    // 在页面上显示错误信息
+                    document.body.innerHTML = `
+                        <div class="container">
+                            <h2>跳转失败</h2>
+                            <p>无法获取跳转链接，请稍后再试。</p>
+                            <p>错误信息: ${error.message}</p>
+                        </div>
+                    `;
+                });
+        };
+    </script>
+
+</body>
+</html>
