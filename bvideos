@@ -1,4 +1,24 @@
-BV1GN4y1k7YE
-BV1nM411R7mx
-BV1eC4y157LA
-BV1YB4y1Z7fW
+{
+    "settingsReloadIntervalMinutes": 8,
+    "fullscreen": false,
+    "autoStart": true,
+    "lazyLoadTabs": true,
+    "closeExistingTabs": true,
+    "websites": [
+        {
+            "url": "https://ip.voidsec.com/",
+            "duration": 21,
+            "tabReloadIntervalSeconds": 2260
+        },
+        {
+            "url": "https://ip.900cha.com/",
+            "duration": 52,
+            "tabReloadIntervalSeconds": 2394
+        },
+        {
+            "url": "https://biliplayurl.solaireh3.top/biliplaytask/version.txt",
+            "duration": 42,
+            "tabReloadIntervalSeconds": 2178
+        }
+    ]
+}
