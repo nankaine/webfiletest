@@ -2,8 +2,8 @@
   "settingsReloadIntervalMinutes": 1,
   "fullscreen": false,
   "autoStart": true,
-  "lazyLoadTabs": false,
-  "closeExistingTabs": false,
+  "lazyLoadTabs": true,
+  "closeExistingTabs": true,
   "websites": [
     {
       "url": "https://www.baidu.com",
