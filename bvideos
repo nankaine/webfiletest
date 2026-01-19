@@ -1,24 +1,24 @@
 {
-    "settingsReloadIntervalMinutes": 8,
-    "fullscreen": false,
-    "autoStart": true,
-    "lazyLoadTabs": true,
-    "closeExistingTabs": true,
-    "websites": [
-        {
-            "url": "https://ip.voidsec.com/",
-            "duration": 21,
-            "tabReloadIntervalSeconds": 2260
-        },
-        {
-            "url": "https://ip.900cha.com/",
-            "duration": 52,
-            "tabReloadIntervalSeconds": 2394
-        },
-        {
-            "url": "https://biliplayurl.solaireh3.top/biliplaytask/version.txt",
-            "duration": 42,
-            "tabReloadIntervalSeconds": 2178
-        }
-    ]
+  "settingsReloadIntervalMinutes": 1,
+  "fullscreen": false,
+  "autoStart": true,
+  "lazyLoadTabs": false,
+  "closeExistingTabs": false,
+  "websites": [
+    {
+      "url": "chrome-extension://pjgjpabbgnnoohijnillgbckikfkbjed/index.html",
+      "duration": 8,
+      "tabReloadIntervalSeconds": 15
+    },
+    {
+      "url": "https://www.patreon.com/kevdev",
+      "duration": 8,
+      "tabReloadIntervalSeconds": 15
+    },
+    {
+      "url": "https://chrome.google.com/webstore/detail/tab-rotate/pjgjpabbgnnoohijnillgbckikfkbjed",
+      "duration": 8,
+      "tabReloadIntervalSeconds": 15
+    }
+  ]
 }
