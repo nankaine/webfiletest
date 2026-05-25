@@ -6,17 +6,17 @@
   "closeExistingTabs": true,
   "websites": [
     {
-      "url": "https://www.baidu.com",
+      "url": "https://126.com",
       "duration": 8,
       "tabReloadIntervalSeconds": 15
     },
     {
-      "url": "https://linux.do",
+      "url": "https://163.com",
       "duration": 8,
       "tabReloadIntervalSeconds": 15
     },
     {
-      "url": "https://ithome.com",
+      "url": "https://52pojie.cn",
       "duration": 8,
       "tabReloadIntervalSeconds": 15
     }
